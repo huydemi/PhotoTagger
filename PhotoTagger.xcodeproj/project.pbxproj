@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0FE29F2B2DF410911DC5A6 /* Pods_PhotoTagger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8F79602A1DA34C1552E248 /* Pods_PhotoTagger.framework */; };
+		6BA07163212BC8AF0033DE2E /* ImaggaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA07162212BC8AF0033DE2E /* ImaggaRouter.swift */; };
 		932ED1F71BF9390D0072C1C4 /* PhotoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ED1F61BF9390D0072C1C4 /* PhotoColor.swift */; };
 		932ED1F91BF944590072C1C4 /* TagsColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ED1F81BF944590072C1C4 /* TagsColorsViewController.swift */; };
 		932ED1FB1BF9459E0072C1C4 /* TagsColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932ED1FA1BF9459E0072C1C4 /* TagsColorsTableViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		169D8975686CD19FEFAA95B2 /* Pods-PhotoTagger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTagger.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoTagger/Pods-PhotoTagger.release.xcconfig"; sourceTree = "<group>"; };
+		6BA07162212BC8AF0033DE2E /* ImaggaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaggaRouter.swift; sourceTree = "<group>"; };
 		932ED1F61BF9390D0072C1C4 /* PhotoColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoColor.swift; sourceTree = "<group>"; };
 		932ED1F81BF944590072C1C4 /* TagsColorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsColorsViewController.swift; sourceTree = "<group>"; };
 		932ED1FA1BF9459E0072C1C4 /* TagsColorsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsColorsTableViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				93EF0CAF1BF41DA20051B5B1 /* Info.plist */,
 				93EF0CAC1BF41DA20051B5B1 /* LaunchScreen.storyboard */,
 				93EF0CA71BF41DA20051B5B1 /* Main.storyboard */,
+				6BA07162212BC8AF0033DE2E /* ImaggaRouter.swift */,
 			);
 			path = PhotoTagger;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				932ED1F91BF944590072C1C4 /* TagsColorsViewController.swift in Sources */,
 				932ED1FB1BF9459E0072C1C4 /* TagsColorsTableViewController.swift in Sources */,
 				9569363E1E0B06AC00B49A5A /* TagsColorTableData.swift in Sources */,
+				6BA07163212BC8AF0033DE2E /* ImaggaRouter.swift in Sources */,
 				93EF0CA61BF41DA20051B5B1 /* ViewController.swift in Sources */,
 				93EF0CA41BF41DA20051B5B1 /* AppDelegate.swift in Sources */,
 			);
