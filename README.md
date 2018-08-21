@@ -4,6 +4,8 @@ Take your first steps into Alamofire, the de facto networking library on iOS pow
 
 ![screenshot](https://koenig-media.raywenderlich.com/uploads/2016/12/Alamofire-feature.png)
 
+![screenshot](https://koenig-media.raywenderlich.com/uploads/2015/11/PhotoTaggerDemo.gif)
+
 ---
 
 Source:
