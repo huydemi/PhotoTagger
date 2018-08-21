@@ -155,12 +155,60 @@ extension ViewController {
                           
                           let firstFileID = JSON(value)["uploaded"][0]["id"].stringValue
                           print("Content uploaded with ID: \(firstFileID)")
-                          completion(nil, nil)
+
+                          self.downloadTags(contentID: firstFileID) { tags in
+                            self.downloadColors(contentID: firstFileID) { colors in
+                              completion(tags, colors)
+                            }
+                          }
                         }
                       case .failure(let encodingError):
                         print(encodingError)
                       }
     })
+  }
+  
+  func downloadTags(contentID: String, completion: @escaping ([String]?) -> Void) {
+    Alamofire.request("http://api.imagga.com/v1/tagging",
+                      parameters: ["content": contentID],
+                      headers: ["Authorization": "Basic YWNjXzBlZWE3NzM0MTAzZmJiNzo0ZGJiYmNlZjEyNjRmYmNjYWE1NDcyZThhMzk0ZjcyZA=="])
+      .responseJSON { response in
+        guard response.result.isSuccess,
+          let value = response.result.value else {
+            print("Error while fetching tags: \(String(describing: response.result.error))")
+            completion(nil)
+            return
+        }
+        
+        let tags = JSON(value)["results"][0]["tags"].array?.map { json in
+          json["tag"].stringValue
+        }
+        
+        completion(tags)
+    }
+  }
+  
+  func downloadColors(contentID: String, completion: @escaping ([PhotoColor]?) -> Void) {
+    Alamofire.request("http://api.imagga.com/v1/colors",
+                      parameters: ["content": contentID],
+                      headers: ["Authorization": "Basic YWNjXzBlZWE3NzM0MTAzZmJiNzo0ZGJiYmNlZjEyNjRmYmNjYWE1NDcyZThhMzk0ZjcyZA=="])
+      .responseJSON { response in
+        guard response.result.isSuccess,
+          let value = response.result.value else {
+            print("Error while fetching colors: \(String(describing: response.result.error))")
+            completion(nil)
+            return
+        }
+        
+        let photoColors = JSON(value)["results"][0]["info"]["image_colors"].array?.map { json in
+          PhotoColor(red: json["r"].intValue,
+                     green: json["g"].intValue,
+                     blue: json["b"].intValue,
+                     colorName: json["closest_palette_color"].stringValue)
+        }
+        
+        completion(photoColors)
+    }
   }
   
 }
